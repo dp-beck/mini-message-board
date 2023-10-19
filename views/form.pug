@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+    h1=title 
+    form(action="/new", method="post")
+        label(for="messageText") Input Message:  
+        textarea(name="messageText", cols="30", rows="10")
+        label(for="messageUser") User Name: 
+        input(type="text", name="messageUser" id="messageUser")
+        input(type="submit", value="Submit")
+    a(href="/")
+        button Go Back 

@@ -2,7 +2,13 @@ extends layout
 
 block content
   h1= title
-  ul
-    each message in messages
-      li= message.text
+  
+  a(href="/new")   
+    button New Message
+
+  each message in messages
+    ul(class='message')
+      li(class='message-text')= message.text
+      li(class='message-user')= 'From: ' + message.user 
+      li(class='message-date')= message.added.toUTCString()
   
